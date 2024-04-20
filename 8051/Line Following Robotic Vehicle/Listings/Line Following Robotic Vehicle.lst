@@ -1,0 +1,102 @@
+C51 COMPILER V9.60.7.0   LINE_FOLLOWING_ROBOTIC_VEHICLE                                    04/18/2024 00:29:03 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE LINE_FOLLOWING_ROBOTIC_VEHICLE
+OBJECT MODULE PLACED IN .\Objects\Line Following Robotic Vehicle.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Line Following Robotic Vehicle.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEX
+                    -TEND PRINT(.\Listings\Line Following Robotic Vehicle.lst) TABS(2) OBJECT(.\Objects\Line Following Robotic Vehicle.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit mot1=P2^0;
+   3          sbit mot2=P2^1;
+   4          sbit mot3=P2^2;
+   5          sbit mot4=P2^3;
+   6          
+   7          sbit s_left=P2^6;
+   8          sbit s_right=P2^7;
+   9          
+  10          void forward (void);
+  11          void backward (void);
+  12          void left (void);
+  13          void right (void);
+  14          
+  15          void forward (void)
+  16          {
+  17   1        mot1=0;
+  18   1        mot2=1;
+  19   1        mot3=1;
+  20   1        mot4=0;
+  21   1      }
+  22          void backward (void)
+  23          {
+  24   1        mot1=0;
+  25   1        mot2=1;
+  26   1        mot3=0;
+  27   1        mot4=1;
+  28   1      }
+  29          void left (void)
+  30          {
+  31   1        mot1=0;
+  32   1        mot2=1;
+  33   1        mot3=0;
+  34   1        mot4=0;
+  35   1      }
+  36          void right (void)
+  37          {
+  38   1        mot1=0;
+  39   1        mot2=0;
+  40   1        mot3=1;
+  41   1        mot4=0;
+  42   1      }
+  43          void stop (void)
+  44          {
+  45   1        mot1=0;
+  46   1        mot2=0;
+  47   1        mot3=0;
+  48   1        mot4=0;
+  49   1      }
+  50          
+  51          
+  52          
+  53          void main()
+  54          {
+C51 COMPILER V9.60.7.0   LINE_FOLLOWING_ROBOTIC_VEHICLE                                    04/18/2024 00:29:03 PAGE 2   
+
+  55   1        s_left=1;
+  56   1        s_right=1;
+  57   1        while(1)
+  58   1        { 
+  59   2         if(s_left==0 && s_right==0)
+  60   2         {
+  61   3           forward();
+  62   3         }
+  63   2         else if(s_left==1 && s_right==1)
+  64   2         {
+  65   3           stop();
+  66   3         }
+  67   2         else if(s_left==0 && s_right==1)
+  68   2         {
+  69   3           left();
+  70   3         }
+  71   2         else if(s_left==1 && s_right==0)
+  72   2         {
+  73   3           right();
+  74   3         }
+  75   2       }
+  76   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     93    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

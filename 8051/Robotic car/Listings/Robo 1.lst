@@ -1,0 +1,181 @@
+C51 COMPILER V9.59.0.0   ROBO_1                                                            12/12/2018 13:07:26 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE ROBO_1
+OBJECT MODULE PLACED IN .\Objects\Robo 1.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Robo 1.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\Ro
+                    -bo 1.lst) TABS(2) OBJECT(.\Objects\Robo 1.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit rs=P3^0;
+   3          sbit rw=P3^1;
+   4          sbit en=P3^2;
+   5          sbit frwsw=P0^0;
+   6          sbit revsw=P0^1;
+   7          sbit leftsw=P0^2;
+   8          sbit rightsw=P0^3;
+   9          sbit stopsw=P0^4;
+  10          sbit in1=P3^3;
+  11          sbit in2=P3^4;
+  12          sbit in3=P3^5;
+  13          sbit in4=P3^6;
+  14          void msdelay(unsigned int);
+  15          void lcdcmd(unsigned char);
+  16          void lcddata(unsigned char [],unsigned char);
+  17          void main(void)
+  18          {
+  19   1        P2=00;//act as o/p
+  20   1        P3=00;//
+  21   1        rs=0;//
+  22   1        rw=0;//
+  23   1        en=0;//
+  24   1        P3=00;//
+  25   1        in1=0;//
+  26   1        in2=0;//
+  27   1        in3=0;//
+  28   1        in4=0;//
+  29   1        
+  30   1        frwsw=1;//
+  31   1        revsw=1;//ACT AS I/P
+  32   1        leftsw=1;
+  33   1        rightsw=1;
+  34   1        stopsw=1;//
+  35   1        
+  36   1        lcdcmd(0x38);//8 bit
+  37   1        lcdcmd(0x0f);//cur blinking
+  38   1        lcdcmd(0x06);//increment
+  39   1        lcdcmd(0x01);//clear screen
+  40   1            lcdcmd(0x80);
+  41   1            lcddata("HELLO",5);
+  42   1            lcdcmd(0xc0);
+  43   1            lcddata("WORLD",5);
+  44   1        
+  45   1        while(1)
+  46   1        {
+  47   2          if(frwsw==0)
+  48   2          {
+  49   3          in1=1;
+  50   3          in2=0;
+  51   3          in3=1;
+  52   3          in4=0;
+  53   3            lcdcmd(0x01);//clear screen
+  54   3            msdelay(5);
+C51 COMPILER V9.59.0.0   ROBO_1                                                            12/12/2018 13:07:26 PAGE 2   
+
+  55   3            lcdcmd(0x80);
+  56   3            lcddata("FORWARD",7);
+  57   3            lcdcmd(0xc0);
+  58   3            lcddata("SWITCH",6);
+  59   3          }
+  60   2            else if(revsw==0)
+  61   2            {
+  62   3          in1=0;
+  63   3          in2=1;
+  64   3          in3=0;
+  65   3          in4=1;
+  66   3            lcdcmd(0x01);//clear screen
+  67   3            msdelay(5);
+  68   3            lcdcmd(0x80);
+  69   3            lcddata("REVERSE",8);
+  70   3            lcdcmd(0xc0);
+  71   3            lcddata("SWITCH",6);
+  72   3            }
+  73   2            else if(leftsw==0)
+  74   2            {
+  75   3          in1=0;
+  76   3          in2=1;
+  77   3          in3=1;
+  78   3          in4=1;
+  79   3            lcdcmd(0x01);//clear screen
+  80   3            msdelay(5);
+  81   3            lcdcmd(0x80);
+  82   3            lcddata("LEFT",4);
+  83   3            lcdcmd(0xc0);
+  84   3            lcddata("SWITCH",6);
+  85   3            }
+  86   2            else if(rightsw==0)
+  87   2            {
+  88   3          in1=1;
+  89   3          in2=0;
+  90   3          in3=0;
+  91   3          in4=0;
+  92   3            lcdcmd(0x01);//clear screen
+  93   3            msdelay(5);
+  94   3            lcdcmd(0x80);
+  95   3            lcddata("RIGHT",5);
+  96   3            lcdcmd(0xc0);
+  97   3            lcddata("SWITCH",6);
+  98   3            }
+  99   2            else if(stopsw==0)
+ 100   2            {
+ 101   3          in1=1;
+ 102   3          in2=1;
+ 103   3          in3=1;
+ 104   3          in4=1;
+ 105   3            lcdcmd(0x01);//clear screen
+ 106   3            msdelay(5);
+ 107   3            lcdcmd(0x80);
+ 108   3            lcddata("STOPED",6);
+ 109   3            lcdcmd(0xc0);
+ 110   3            lcddata("SWITCH",6);
+ 111   3            }
+ 112   2            else
+ 113   2            {
+ 114   3          in1=0;
+ 115   3          in2=0;
+ 116   3          in3=0;
+C51 COMPILER V9.59.0.0   ROBO_1                                                            12/12/2018 13:07:26 PAGE 3   
+
+ 117   3          in4=0;
+ 118   3          }//END OF IF
+ 119   2        }//end of while
+ 120   1      }//end of main
+ 121          
+ 122          
+ 123          
+ 124          void msdelay(unsigned int a)
+ 125          {
+ 126   1        unsigned int x,y;
+ 127   1        for(x=0;x<a;x++)
+ 128   1        for(y=0;y<1275;y++);
+ 129   1      }//end of msdelay
+ 130          
+ 131          void lcdcmd(unsigned char cmd)
+ 132          {
+ 133   1        P2=cmd;
+ 134   1        rs=0;
+ 135   1        rw=0;
+ 136   1        en=1;
+ 137   1        msdelay(5);
+ 138   1        en=0;
+ 139   1      }//end of lcdcmd
+ 140          
+ 141          void lcddata(unsigned char a[],unsigned char len)
+ 142          {
+ 143   1        unsigned char x;
+ 144   1        for(x=0;x<len;x++)
+ 145   1        {
+ 146   2          P2=a[x];
+ 147   2          rs=1;
+ 148   2          rw=0;
+ 149   2          en=1;
+ 150   2          msdelay(5);
+ 151   2          en=0;
+ 152   2        }//end of for
+ 153   1        }//end of lcddata
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    435    ----
+   CONSTANT SIZE    =     53    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

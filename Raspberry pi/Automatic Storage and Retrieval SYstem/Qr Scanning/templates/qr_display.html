@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Display</title>
+</head>
+<body>
+    <div>
+        <h2>QR Code</h2>
+        <img src="{{ url_for('uploaded_file', filename=data['serial_number'] + '.png') }}" alt="QR Code">
+    </div>
+</body>
+</html>

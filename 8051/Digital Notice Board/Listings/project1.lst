@@ -1,0 +1,86 @@
+C51 COMPILER V9.59.0.0   PROJECT1                                                          09/09/2018 15:03:33 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE PROJECT1
+OBJECT MODULE PLACED IN .\Objects\project1.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE project1.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -project1.lst) TABS(2) OBJECT(.\Objects\project1.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit rs=P2^0;
+   3          sbit rw=P2^1;
+   4          sbit en=P2^2;
+   5          void msdelay(unsigned int);
+   6          void lcdcmd(unsigned char);
+   7          void lcddata(unsigned char[],unsigned char);
+   8          void main (void)
+   9          {
+  10   1        P3=00;
+  11   1        rs=0;
+  12   1        rw=0;
+  13   1        en=0;
+  14   1        lcdcmd(0x38);
+  15   1        lcdcmd(0x0C);
+  16   1        lcdcmd(0x06);
+  17   1        while(1)
+  18   1        {
+  19   2          lcdcmd(0x01);
+  20   2          lcdcmd(0x83);
+  21   2          lcddata("MY NAME IS",10);
+  22   2          lcdcmd(0xc3);
+  23   2          lcddata("PREM GUDNAR",11);
+  24   2          msdelay(100);
+  25   2        }//end of while
+  26   1      }//end of main
+  27          
+  28          
+  29          void msdelay(unsigned int a)
+  30          {
+  31   1        unsigned int x,y;
+  32   1        for(x=0;x<a;x++)
+  33   1        for(y=0;y<1275;y++);
+  34   1      }//end of msdelay
+  35          
+  36          
+  37          void lcdcmd(unsigned char cmd)
+  38          {
+  39   1        P3=cmd;
+  40   1        rs=0;
+  41   1        rw=0;
+  42   1        en=1;
+  43   1        msdelay(5);
+  44   1        en=0;
+  45   1      }//end of lcdcmd
+  46          
+  47          
+  48          void lcddata(unsigned char a[],unsigned char len)
+  49          {
+  50   1        unsigned char x;
+  51   1        for(x=0;x<len;x++)
+  52   1        {
+  53   2          P3=a[x];
+  54   2          rs=1;
+C51 COMPILER V9.59.0.0   PROJECT1                                                          09/09/2018 15:03:33 PAGE 2   
+
+  55   2          rw=0;
+  56   2          en=1;
+  57   2          msdelay(5);
+  58   2          en=0;
+  59   2        }//end of for
+  60   1        }//end of lcddata
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    167    ----
+   CONSTANT SIZE    =     23    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

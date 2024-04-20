@@ -1,0 +1,163 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    04/18/2024  00:29:04  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Line Following Robotic Vehicle.obj TO .\Objects\Line Following Robotic Vehicle PRI
+>> NT (.\Listings\Line Following Robotic Vehicle.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Line Following Robotic Vehicle.obj (LINE_FOLLOWING_ROBOTIC_VEHICLE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\Line Following Robotic Vehicle (LINE_FOLLOWING_ROBOTIC_VEHICLE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0030H     UNIT         ?PR?MAIN?LINE_FOLLOWING_ROBOTIC_VEHICLE
+            CODE    0830H     000CH     UNIT         ?C_C51STARTUP
+            CODE    083CH     0009H     UNIT         ?PR?FORWARD?LINE_FOLLOWING_ROBOTIC_VEHICLE
+            CODE    0845H     0009H     UNIT         ?PR?BACKWARD?LINE_FOLLOWING_ROBOTIC_VEHICLE
+            CODE    084EH     0009H     UNIT         ?PR?LEFT?LINE_FOLLOWING_ROBOTIC_VEHICLE
+            CODE    0857H     0009H     UNIT         ?PR?RIGHT?LINE_FOLLOWING_ROBOTIC_VEHICLE
+            CODE    0860H     0009H     UNIT         ?PR?STOP?LINE_FOLLOWING_ROBOTIC_VEHICLE
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Line Following Robotic Vehicle (LINE_FOLLOWING_ROBOTIC_VEHICLE)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LINE_FOLLOWING_ROBOTIC_VEHICLE
+
+?PR?MAIN?LINE_FOLLOWING_ROBOTIC_VEHICLE
+  +--> ?PR?FORWARD?LINE_FOLLOWING_ROBOTIC_VE...
+  +--> ?PR?STOP?LINE_FOLLOWING_ROBOTIC_VEHICLE
+  +--> ?PR?LEFT?LINE_FOLLOWING_ROBOTIC_VEHICLE
+  +--> ?PR?RIGHT?LINE_FOLLOWING_ROBOTIC_VEHICLE
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Line Following Robotic Vehicle (LINE_FOLLOWING_ROBOTIC_VEHICLE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  04/18/2024  00:29:04  PAGE 2
+
+
+  -------         MODULE        LINE_FOLLOWING_ROBOTIC_VEHICLE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A0H.6       PUBLIC        s_left
+  D:00A0H         PUBLIC        P2
+  B:00A0H.0       PUBLIC        mot1
+  B:00A0H.1       PUBLIC        mot2
+  B:00A0H.2       PUBLIC        mot3
+  B:00A0H.3       PUBLIC        mot4
+  C:0857H         PUBLIC        right
+  C:0800H         PUBLIC        main
+  C:084EH         PUBLIC        left
+  C:0845H         PUBLIC        backward
+  C:0860H         PUBLIC        stop
+  B:00A0H.7       PUBLIC        s_right
+  C:083CH         PUBLIC        forward
+  -------         PROC          FORWARD
+  C:083CH         LINE#         15
+  C:083CH         LINE#         16
+  C:083CH         LINE#         17
+  C:083EH         LINE#         18
+  C:0840H         LINE#         19
+  C:0842H         LINE#         20
+  C:0844H         LINE#         21
+  -------         ENDPROC       FORWARD
+  -------         PROC          BACKWARD
+  C:0845H         LINE#         22
+  C:0845H         LINE#         23
+  C:0845H         LINE#         24
+  C:0847H         LINE#         25
+  C:0849H         LINE#         26
+  C:084BH         LINE#         27
+  C:084DH         LINE#         28
+  -------         ENDPROC       BACKWARD
+  -------         PROC          LEFT
+  C:084EH         LINE#         29
+  C:084EH         LINE#         30
+  C:084EH         LINE#         31
+  C:0850H         LINE#         32
+  C:0852H         LINE#         33
+  C:0854H         LINE#         34
+  C:0856H         LINE#         35
+  -------         ENDPROC       LEFT
+  -------         PROC          RIGHT
+  C:0857H         LINE#         36
+  C:0857H         LINE#         37
+  C:0857H         LINE#         38
+  C:0859H         LINE#         39
+  C:085BH         LINE#         40
+  C:085DH         LINE#         41
+  C:085FH         LINE#         42
+  -------         ENDPROC       RIGHT
+  -------         PROC          STOP
+  C:0860H         LINE#         43
+  C:0860H         LINE#         44
+  C:0860H         LINE#         45
+  C:0862H         LINE#         46
+  C:0864H         LINE#         47
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  04/18/2024  00:29:04  PAGE 3
+
+
+  C:0866H         LINE#         48
+  C:0868H         LINE#         49
+  -------         ENDPROC       STOP
+  -------         PROC          MAIN
+  C:0800H         LINE#         53
+  C:0800H         LINE#         54
+  C:0800H         LINE#         55
+  C:0802H         LINE#         56
+  C:0804H         LINE#         57
+  C:0804H         LINE#         58
+  C:0804H         LINE#         59
+  C:080AH         LINE#         60
+  C:080AH         LINE#         61
+  C:080DH         LINE#         62
+  C:080FH         LINE#         63
+  C:0815H         LINE#         64
+  C:0815H         LINE#         65
+  C:0818H         LINE#         66
+  C:081AH         LINE#         67
+  C:0820H         LINE#         68
+  C:0820H         LINE#         69
+  C:0823H         LINE#         70
+  C:0825H         LINE#         71
+  C:082BH         LINE#         72
+  C:082BH         LINE#         73
+  C:082EH         LINE#         74
+  C:082EH         LINE#         75
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LINE_FOLLOWING_ROBOTIC_VEHICLE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?BACKWARD?LINE_FOLLOWING_ROBOTIC_VEHICLE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 005DH BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=108
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

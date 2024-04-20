@@ -1,0 +1,168 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    04/18/2024  00:29:33  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\PIR Sensor and GSM Based Security System.obj TO .\Objects\PIR Sensor and GSM Based
+>>  Security System PRINT (.\Listings\PIR Sensor and GSM Based Security System.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\PIR Sensor and GSM Based Security System.obj (PIR_SENSOR_AND_GSM_BASED_SECURITY_SYSTEM)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  .\Objects\PIR Sensor and GSM Based Security System (PIR_SENSOR_AND_GSM_BASED_SECURITY_SYSTEM)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0059H     UNIT         ?CO?PIR_SENSOR_AND_GSM_BASED_SECURITY_SYSTEM
+            CODE    0859H     0047H     UNIT         ?PR?MAIN?PIR_SENSOR_AND_GSM_BASED_SECURITY_SYSTEM
+            CODE    08A0H     002FH     UNIT         ?PR?_DELAY?PIR_SENSOR_AND_GSM_BASED_SECURITY_SYSTEM
+            CODE    08CFH     0019H     UNIT         ?C?LIB_CODE
+            CODE    08E8H     0017H     UNIT         ?PR?_SERIALPRINTLN?PIR_SENSOR_AND_GSM_BASED_SECURITY_SYSTEM
+            CODE    08FFH     000CH     UNIT         ?PR?SERIALBEGIN?PIR_SENSOR_AND_GSM_BASED_SECURITY_SYSTEM
+            CODE    090BH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0917H     0008H     UNIT         ?PR?_SERIALWRITE?PIR_SENSOR_AND_GSM_BASED_SECURITY_SYSTEM
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\PIR Sensor and GSM Based Security System (PIR_SENSOR_AND_GSM_BASED_SECURITY_SYSTEM)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?PIR_SENSOR_AND_GSM_BASED_SEC...
+
+?PR?MAIN?PIR_SENSOR_AND_GSM_BASED_SEC...
+  +--> ?PR?SERIALBEGIN?PIR_SENSOR_AND_GSM_BA...
+  +--> ?CO?PIR_SENSOR_AND_GSM_BASED_SECURITY...
+  +--> ?PR?_DELAY?PIR_SENSOR_AND_GSM_BASED_S...
+  +--> ?PR?_SERIALPRINTLN?PIR_SENSOR_AND_GSM...
+  +--> ?PR?_SERIALWRITE?PIR_SENSOR_AND_GSM_B...
+
+?PR?_DELAY?PIR_SENSOR_AND_GSM_BASED_S...
+  +--> ?PR?_SERIALPRINTLN?PIR_SENSOR_AND_GSM...
+
+?PR?_SERIALPRINTLN?PIR_SENSOR_AND_GSM...
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  04/18/2024  00:29:33  PAGE 2
+
+
+  +--> ?PR?_SERIALWRITE?PIR_SENSOR_AND_GSM_B...
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\PIR Sensor and GSM Based Security System (PIR_SENSOR_AND_GSM_BASED_SECURITY_SYSTEM)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        PIR_SENSOR_AND_GSM_BASED_SECURITY_SYSTEM
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:08A9H         PUBLIC        _delay
+  C:0917H         PUBLIC        _Serialwrite
+  B:0098H.1       PUBLIC        TI
+  C:0859H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:008DH         PUBLIC        TH1
+  B:0088H.6       PUBLIC        TR1
+  B:00A0H.0       PUBLIC        PIR
+  C:08FFH         PUBLIC        Serialbegin
+  C:08E8H         PUBLIC        _Serialprintln
+  -------         PROC          L?0021
+  -------         ENDPROC       L?0021
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        itime
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:08A9H         LINE#         7
+  C:08A9H         LINE#         9
+  C:08A9H         LINE#         13
+  C:08B9H         LINE#         15
+  C:08CEH         LINE#         17
+  -------         ENDPROC       _DELAY
+  -------         PROC          SERIALBEGIN
+  C:08FFH         LINE#         20
+  C:08FFH         LINE#         22
+  C:08FFH         LINE#         24
+  C:0902H         LINE#         26
+  C:0905H         LINE#         28
+  C:0908H         LINE#         30
+  C:090AH         LINE#         32
+  -------         ENDPROC       SERIALBEGIN
+  -------         PROC          _SERIALWRITE
+  D:0007H         SYMBOL        dat
+  C:0917H         LINE#         35
+  C:0917H         LINE#         37
+  C:0917H         LINE#         39
+  C:0919H         LINE#         41
+  C:091CH         LINE#         43
+  C:091EH         LINE#         45
+  -------         ENDPROC       _SERIALWRITE
+  -------         PROC          _SERIALPRINTLN
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  04/18/2024  00:29:33  PAGE 3
+
+
+  D:0001H         SYMBOL        p
+  C:08E8H         LINE#         48
+  C:08E8H         LINE#         50
+  C:08E8H         LINE#         52
+  C:08EEH         LINE#         54
+  C:08EEH         LINE#         56
+  C:08F1H         LINE#         58
+  C:08F8H         LINE#         60
+  C:08FAH         LINE#         62
+  -------         ENDPROC       _SERIALPRINTLN
+  -------         PROC          MAIN
+  C:0859H         LINE#         67
+  C:0859H         LINE#         69
+  C:0859H         LINE#         73
+  C:085CH         LINE#         75
+  C:0860H         LINE#         77
+  C:0863H         LINE#         79
+  C:0863H         LINE#         81
+  C:0863H         LINE#         83
+  C:0866H         LINE#         85
+  C:0866H         LINE#         87
+  C:086FH         LINE#         89
+  C:0876H         LINE#         95
+  C:087AH         LINE#         97
+  C:087DH         LINE#         99
+  C:0886H         LINE#         101
+  C:088BH         LINE#         103
+  C:0894H         LINE#         105
+  C:0899H         LINE#         107
+  C:089EH         LINE#         109
+  C:089EH         LINE#         111
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        PIR_SENSOR_AND_GSM_BASED_SECURITY_SYSTEM
+
+  -------         MODULE        ?C?CLDPTR
+  C:08CFH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00FAH BYTE (12%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=290
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

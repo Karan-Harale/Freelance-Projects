@@ -1,0 +1,13 @@
+C51 COMPILER V9.59.0.0   BBHAS                                                             01/13/2019 21:55:39 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE BBHAS
+OBJECT MODULE PLACED IN .\Objects\BBHAS.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE BBHAS.C OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\BBH
+                    -AS.lst) TABS(2) OBJECT(.\Objects\BBHAS.obj)
+
+line level    source
+
+*** ERROR C318 OF BBHAS.C: can't open file 'BBHAS.C'
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
